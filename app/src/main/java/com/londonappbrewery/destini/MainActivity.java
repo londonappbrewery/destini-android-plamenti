@@ -28,9 +28,17 @@ public class MainActivity extends AppCompatActivity {
         mTopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mStoryTextView.setText(R.string.T3_Story);
-                mTopButton.setText(R.string.T3_Ans1);
-                mBottomButton.setText((R.string.T3_Ans2));
+                if (mStoryIndex == 1 || mStoryIndex == 2) {
+                    mStoryTextView.setText(R.string.T3_Story);
+                    mTopButton.setText(R.string.T3_Ans1);
+                    mBottomButton.setText((R.string.T3_Ans2));
+                    mStoryIndex = 3;
+                } else {
+                    mStoryTextView.setText(R.string.T6_End);
+                    mTopButton.setVisibility(View.GONE);
+                    mBottomButton.setVisibility(View.GONE);
+                }
+
             }
         });
 
@@ -38,9 +46,20 @@ public class MainActivity extends AppCompatActivity {
         mBottomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mStoryTextView.setText(R.string.T2_Story);
-                mTopButton.setText(R.string.T2_Ans1);
-                mBottomButton.setText((R.string.T2_Ans2));
+                if (mStoryIndex == 1) {
+                    mStoryTextView.setText(R.string.T2_Story);
+                    mTopButton.setText(R.string.T2_Ans1);
+                    mBottomButton.setText((R.string.T2_Ans2));
+                    mStoryIndex = 2;
+                } else if (mStoryIndex == 2) {
+                    mStoryTextView.setText(R.string.T4_End);
+                    mTopButton.setVisibility(View.GONE);
+                    mBottomButton.setVisibility(View.GONE);
+                } else {
+                    mStoryTextView.setText(R.string.T5_End);
+                    mTopButton.setVisibility(View.GONE);
+                    mBottomButton.setVisibility(View.GONE);
+                }
             }
         });
 
