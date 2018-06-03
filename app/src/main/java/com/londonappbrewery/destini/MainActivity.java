@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mStoryTextView;
     private Button mTopButton;
     private Button mBottomButton;
+    private int mStoryIndex = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
